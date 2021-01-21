@@ -19,6 +19,7 @@ Compiler Features:
  * Standard JSON: New option ``modelCheckerSettings.targets`` allows specifying which targets should be checked. The valid options are ``all``, ``constantCondition``,
    ``underflow``, ``overflow``, ``divByZero``, ``balance``, ``assert``, ``popEmptyArray``, where the default is ``all``. Multiple targets can be chosen at the same time,
    separated by a comma without spaces: ``underflow,overflow,assert``.
+ * Code Generator: Implemented a shortcut  for ``<address>.code.length`` that generates ``extcodesize(<address>)``.
 
 Bugfixes:
  * Code Generator: Fix length check when decoding malformed error data in catch clause.

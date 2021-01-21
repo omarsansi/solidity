@@ -1,0 +1,419 @@
+
+======= code_length_size/input.sol:C =======
+EVM assembly:
+    /* "code_length_size/input.sol":36:352  contract C {... */
+  mstore(0x40, 0x80)
+    /* "code_length_size/input.sol":83:186  constructor() {... */
+  callvalue
+  dup1
+  iszero
+  tag_1
+  jumpi
+  0x00
+  dup1
+  revert
+tag_1:
+  pop
+    /* "code_length_size/input.sol":122:123  0 */
+  0x00
+    /* "code_length_size/input.sol":114:136  address(0).code.length */
+  0xffffffffffffffffffffffffffffffffffffffff
+  and
+  extcodesize
+    /* "code_length_size/input.sol":107:111  len1 */
+  0x00
+    /* "code_length_size/input.sol":107:136  len1 = address(0).code.length */
+  dup2
+  swap1
+  sstore
+  pop
+    /* "code_length_size/input.sol":161:165  this */
+  address
+    /* "code_length_size/input.sol":153:178  address(this).code.length */
+  0xffffffffffffffffffffffffffffffffffffffff
+  and
+  extcodesize
+    /* "code_length_size/input.sol":146:150  len2 */
+  0x01
+    /* "code_length_size/input.sol":146:178  len2 = address(this).code.length */
+  dup2
+  swap1
+  sstore
+  pop
+    /* "code_length_size/input.sol":36:352  contract C {... */
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x00
+  codecopy
+  0x00
+  return
+stop
+
+sub_0: assembly {
+        /* "code_length_size/input.sol":36:352  contract C {... */
+      mstore(0x40, 0x80)
+      callvalue
+      dup1
+      iszero
+      tag_1
+      jumpi
+      0x00
+      dup1
+      revert
+    tag_1:
+      pop
+      jumpi(tag_2, lt(calldatasize, 0x04))
+      shr(0xe0, calldataload(0x00))
+      dup1
+      0x26121ff0
+      eq
+      tag_3
+      jumpi
+    tag_2:
+      0x00
+      dup1
+      revert
+        /* "code_length_size/input.sol":191:350  function f() public view returns (uint r1, uint r2) {... */
+    tag_3:
+      tag_4
+      tag_5
+      jump	// in
+    tag_4:
+      mload(0x40)
+      tag_6
+      swap3
+      swap2
+      swap1
+      tag_7
+      jump	// in
+    tag_6:
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+    tag_5:
+        /* "code_length_size/input.sol":225:232  uint r1 */
+      0x00
+        /* "code_length_size/input.sol":234:241  uint r2 */
+      dup1
+        /* "code_length_size/input.sol":266:270  this */
+      address
+        /* "code_length_size/input.sol":258:283  address(this).code.length */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      extcodesize
+        /* "code_length_size/input.sol":253:283  r1 = address(this).code.length */
+      swap2
+      pop
+        /* "code_length_size/input.sol":293:302  address a */
+      0x00
+        /* "code_length_size/input.sol":330:331  a */
+      dup1
+        /* "code_length_size/input.sol":330:343  a.code.length */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      extcodesize
+        /* "code_length_size/input.sol":325:343  r2 = a.code.length */
+      swap2
+      pop
+        /* "code_length_size/input.sol":191:350  function f() public view returns (uint r1, uint r2) {... */
+      pop
+      swap1
+      swap2
+      jump	// out
+        /* "#utility.yul":7:125   */
+    tag_10:
+        /* "#utility.yul":94:118   */
+      tag_12
+        /* "#utility.yul":112:117   */
+      dup2
+        /* "#utility.yul":94:118   */
+      tag_13
+      jump	// in
+    tag_12:
+        /* "#utility.yul":89:92   */
+      dup3
+        /* "#utility.yul":82:119   */
+      mstore
+        /* "#utility.yul":72:125   */
+      pop
+      pop
+      jump	// out
+        /* "#utility.yul":131:463   */
+    tag_7:
+      0x00
+        /* "#utility.yul":290:292   */
+      0x40
+        /* "#utility.yul":279:288   */
+      dup3
+        /* "#utility.yul":275:293   */
+      add
+        /* "#utility.yul":267:293   */
+      swap1
+      pop
+        /* "#utility.yul":303:374   */
+      tag_15
+        /* "#utility.yul":371:372   */
+      0x00
+        /* "#utility.yul":360:369   */
+      dup4
+        /* "#utility.yul":356:373   */
+      add
+        /* "#utility.yul":347:353   */
+      dup6
+        /* "#utility.yul":303:374   */
+      tag_10
+      jump	// in
+    tag_15:
+        /* "#utility.yul":384:456   */
+      tag_16
+        /* "#utility.yul":452:454   */
+      0x20
+        /* "#utility.yul":441:450   */
+      dup4
+        /* "#utility.yul":437:455   */
+      add
+        /* "#utility.yul":428:434   */
+      dup5
+        /* "#utility.yul":384:456   */
+      tag_10
+      jump	// in
+    tag_16:
+        /* "#utility.yul":257:463   */
+      swap4
+      swap3
+      pop
+      pop
+      pop
+      jump	// out
+        /* "#utility.yul":469:546   */
+    tag_13:
+      0x00
+        /* "#utility.yul":535:540   */
+      dup2
+        /* "#utility.yul":524:540   */
+      swap1
+      pop
+        /* "#utility.yul":514:546   */
+      swap2
+      swap1
+      pop
+      jump	// out
+
+    auxdata: <AUXDATA REMOVED>
+}
+
+IR:
+/*******************************************************
+ *                       WARNING                       *
+ *  Solidity to Yul compilation is still EXPERIMENTAL  *
+ *       It can result in LOSS OF FUNDS or worse       *
+ *                !USE AT YOUR OWN RISK!               *
+ *******************************************************/
+
+
+object "C_57" {
+    code {
+        mstore(64, 128)
+        if callvalue() { revert(0, 0) }
+
+        constructor_C_57()
+
+        codecopy(0, dataoffset("C_57_deployed"), datasize("C_57_deployed"))
+
+        return(0, datasize("C_57_deployed"))
+
+        function cleanup_t_uint160(value) -> cleaned {
+            cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)
+        }
+
+        function cleanup_t_uint256(value) -> cleaned {
+            cleaned := value
+        }
+
+        function constructor_C_57() {
+
+            let expr_10 := 0x00
+            let expr_11 := convert_t_rational_0_by_1_to_t_address(expr_10)
+            let expr_13 := extcodesize(expr_11)
+            update_storage_value_offset_0t_uint256_to_t_uint256(0x00, expr_13)
+            let expr_14 := expr_13
+            let expr_19_address := address()
+            let expr_20 := convert_t_contract$_C_$57_to_t_address(expr_19_address)
+            let expr_22 := extcodesize(expr_20)
+            update_storage_value_offset_0t_uint256_to_t_uint256(0x01, expr_22)
+            let expr_23 := expr_22
+
+        }
+
+        function convert_t_contract$_C_$57_to_t_address(value) -> converted {
+            converted := convert_t_contract$_C_$57_to_t_uint160(value)
+        }
+
+        function convert_t_contract$_C_$57_to_t_uint160(value) -> converted {
+            converted := cleanup_t_uint160(value)
+        }
+
+        function convert_t_rational_0_by_1_to_t_address(value) -> converted {
+            converted := convert_t_rational_0_by_1_to_t_uint160(value)
+        }
+
+        function convert_t_rational_0_by_1_to_t_uint160(value) -> converted {
+            converted := cleanup_t_uint160(value)
+        }
+
+        function convert_t_uint256_to_t_uint256(value) -> converted {
+            converted := cleanup_t_uint256(value)
+        }
+
+        function prepare_store_t_uint256(value) -> ret {
+            ret := value
+        }
+
+        function shift_left_0(value) -> newValue {
+            newValue :=
+
+            shl(0, value)
+
+        }
+
+        function update_byte_slice_32_shift_0(value, toInsert) -> result {
+            let mask := 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+            toInsert := shift_left_0(toInsert)
+            value := and(value, not(mask))
+            result := or(value, and(toInsert, mask))
+        }
+
+        function update_storage_value_offset_0t_uint256_to_t_uint256(slot, value_0) {
+            let convertedValue_0 := convert_t_uint256_to_t_uint256(value_0)
+            sstore(slot, update_byte_slice_32_shift_0(sload(slot), prepare_store_t_uint256(convertedValue_0)))
+        }
+
+    }
+    object "C_57_deployed" {
+        code {
+            mstore(64, 128)
+
+            if iszero(lt(calldatasize(), 4))
+            {
+                let selector := shift_right_224_unsigned(calldataload(0))
+                switch selector
+
+                case 0x26121ff0
+                {
+                    // f()
+
+                    if callvalue() { revert(0, 0) }
+                    abi_decode_tuple_(4, calldatasize())
+                    let ret_0, ret_1 :=  fun_f_56()
+                    let memPos := allocateMemory(0)
+                    let memEnd := abi_encode_tuple_t_uint256_t_uint256__to_t_uint256_t_uint256__fromStack(memPos , ret_0, ret_1)
+                    return(memPos, sub(memEnd, memPos))
+                }
+
+                default {}
+            }
+            if iszero(calldatasize()) {  }
+            revert(0, 0)
+
+            function abi_decode_tuple_(headStart, dataEnd)   {
+                if slt(sub(dataEnd, headStart), 0) { revert(0, 0) }
+
+            }
+
+            function abi_encode_t_uint256_to_t_uint256_fromStack(value, pos) {
+                mstore(pos, cleanup_t_uint256(value))
+            }
+
+            function abi_encode_tuple_t_uint256_t_uint256__to_t_uint256_t_uint256__fromStack(headStart , value0, value1) -> tail {
+                tail := add(headStart, 64)
+
+                abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))
+
+                abi_encode_t_uint256_to_t_uint256_fromStack(value1,  add(headStart, 32))
+
+            }
+
+            function allocateMemory(size) -> memPtr {
+                memPtr := mload(64)
+                let newFreePtr := add(memPtr, round_up_to_mul_of_32(size))
+                // protect against overflow
+                if or(gt(newFreePtr, 0xffffffffffffffff), lt(newFreePtr, memPtr)) { panic_error_0x41() }
+                mstore(64, newFreePtr)
+            }
+
+            function cleanup_t_uint160(value) -> cleaned {
+                cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)
+            }
+
+            function cleanup_t_uint256(value) -> cleaned {
+                cleaned := value
+            }
+
+            function convert_t_contract$_C_$57_to_t_address(value) -> converted {
+                converted := convert_t_contract$_C_$57_to_t_uint160(value)
+            }
+
+            function convert_t_contract$_C_$57_to_t_uint160(value) -> converted {
+                converted := cleanup_t_uint160(value)
+            }
+
+            function convert_t_rational_0_by_1_to_t_address(value) -> converted {
+                converted := convert_t_rational_0_by_1_to_t_uint160(value)
+            }
+
+            function convert_t_rational_0_by_1_to_t_uint160(value) -> converted {
+                converted := cleanup_t_uint160(value)
+            }
+
+            function fun_f_56() -> vloc_r1_29, vloc_r2_31 {
+                let zero_value_for_type_t_uint256_1 := zero_value_for_split_t_uint256()
+                vloc_r1_29 := zero_value_for_type_t_uint256_1
+                let zero_value_for_type_t_uint256_2 := zero_value_for_split_t_uint256()
+                vloc_r2_31 := zero_value_for_type_t_uint256_2
+
+                let expr_36_address := address()
+                let expr_37 := convert_t_contract$_C_$57_to_t_address(expr_36_address)
+                let expr_39 := extcodesize(expr_37)
+                vloc_r1_29 := expr_39
+                let expr_40 := expr_39
+                let expr_46 := 0x00
+                let expr_47 := convert_t_rational_0_by_1_to_t_address(expr_46)
+                let vloc_a_43 := expr_47
+                let _3 := vloc_a_43
+                let expr_50 := _3
+                let expr_52 := extcodesize(expr_50)
+                vloc_r2_31 := expr_52
+                let expr_53 := expr_52
+
+            }
+
+            function panic_error_0x41() {
+                mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                mstore(4, 0x41)
+                revert(0, 0x24)
+            }
+
+            function round_up_to_mul_of_32(value) -> result {
+                result := and(add(value, 31), not(31))
+            }
+
+            function shift_right_224_unsigned(value) -> newValue {
+                newValue :=
+
+                shr(224, value)
+
+            }
+
+            function zero_value_for_split_t_uint256() -> ret {
+                ret := 0
+            }
+
+        }
+
+    }
+
+}
